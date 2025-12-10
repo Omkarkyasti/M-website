@@ -1,53 +1,40 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { Header } from './components/Header';
+import { Home } from './pages/Home';
+import { Movies } from './pages/Movies';
+import { MovieDetails } from './pages/MovieDetails';
+import { SeatSelection } from './pages/SeatSelection';
+import { BookingSuccess } from './pages/BookingSuccess';
+import { MyBookings } from './pages/MyBookings';
+import { Login } from './pages/Login';
+import { Register } from './pages/Register';
+import { AdminDashboard } from './pages/AdminDashboard';
+import { Toaster } from './components/ui/sonner';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <AuthProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
+        <div className="App min-h-screen bg-background text-foreground">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/movie/:id" element={<MovieDetails />} />
+            <Route path="/booking/:showId" element={<SeatSelection />} />
+            <Route path="/booking/success" element={<BookingSuccess />} />
+            <Route path="/my-bookings" element={<MyBookings />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+          </Routes>
+          <Toaster position="top-right" richColors />
+        </div>
       </BrowserRouter>
-    </div>
+    </AuthProvider>
   );
 }
 
