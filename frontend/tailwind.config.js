@@ -54,6 +54,10 @@ module.exports = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+  		boxShadow: {
+  			'neon': '0 0 20px -5px rgba(255, 180, 0, 0.3)',
+  			'deep': '0 25px 50px -12px rgba(0, 0, 0, 0.8)'
+  		},
   		keyframes: {
   			'accordion-down': {
   				from: {
