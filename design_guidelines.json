@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "name": "Lumière Noir",
+    "archetype": "Electric & Neon (Archetype 2) mixed with Jewel & Luxury (Archetype 5)",
+    "vibe": "Cinematic, Immersive, High-Contrast, Premium",
+    "core_philosophy": "Every interaction should feel like the opening credits of a blockbuster. Dark voids, glowing accents, and fluid motion."
+  },
+  "typography": {
+    "font_family": {
+      "headings": "Anton, sans-serif",
+      "body": "Manrope, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "google_fonts_import": "https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+    "usage_rules": {
+      "headings": "Uppercase, tracking-wide for H1/H2. Use 'text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50' for cinematic effect.",
+      "body": "High legibility. tracking-normal. Use font-light (300) for large paragraphs to look elegant.",
+      "buttons": "Uppercase, tracking-widest, font-bold."
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": "#050505",
+      "foreground": "#FAFAFA",
+      "card": "#121212",
+      "card_foreground": "#FFFFFF",
+      "popover": "#0A0A0A",
+      "popover_foreground": "#FFFFFF",
+      "primary": "#FFB400",
+      "primary_foreground": "#000000",
+      "secondary": "#1F1F22",
+      "secondary_foreground": "#FFFFFF",
+      "muted": "#27272A",
+      "muted_foreground": "#A1A1AA",
+      "accent": "#4F46E5",
+      "accent_foreground": "#FFFFFF",
+      "destructive": "#EF4444",
+      "destructive_foreground": "#FFFFFF",
+      "border": "#27272A",
+      "input": "#27272A",
+      "ring": "#FFB400"
+    },
+    "gradients": {
+      "hero_glow": "radial-gradient(circle at center, rgba(255, 180, 0, 0.15) 0%, rgba(5, 5, 5, 0) 70%)",
+      "glass_surface": "linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)",
+      "neon_border": "linear-gradient(90deg, transparent, #FFB400, transparent)"
+    },
+    "rules": [
+      "Never use pure black (#000000) for backgrounds, use #050505.",
+      "Primary color (#FFB400) is for CTAs and 'Active' states only. Do not overuse.",
+      "Use 'accent' (#4F46E5) for subtle depth lighting or secondary highlights."
+    ]
+  },
+  "visual_enhancers": {
+    "glassmorphism": {
+      "default": "bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl",
+      "heavy": "bg-black/80 backdrop-blur-2xl border border-white/5",
+      "interactive": "hover:bg-white/5 transition-colors duration-300"
+    },
+    "borders": {
+      "subtle": "border border-white/10",
+      "glow": "border border-primary/50 shadow-[0_0_15px_rgba(255,180,0,0.3)]"
+    },
+    "shadows": {
+      "neon": "0 0 20px -5px rgba(255, 180, 0, 0.3)",
+      "deep": "0 25px 50px -12px rgba(0, 0, 0, 0.8)"
+    },
+    "textures": {
+      "noise": "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")"
+    }
+  },
+  "layout": {
+    "spacing_scale": "Generous. Use p-8, p-12, p-16. Avoid cramped UIs.",
+    "grid_systems": {
+      "landing": "Mode A (Tetris Grid): Mix hero posters (col-span-2 row-span-2) with standard cards.",
+      "dashboard": "Mode B (Control Room): Dense, 1px borders, no gaps between cells (border-collapse feel).",
+      "booking": "Focused Center: Max-width-4xl, centered, distraction-free."
+    },
+    "containers": {
+      "marketing": "w-full max-w-7xl mx-auto px-6",
+      "app": "w-full h-screen overflow-hidden flex"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90 shadow-neon rounded-none uppercase tracking-widest font-bold px-8 py-4",
+      "secondary": "bg-transparent border border-white/20 text-white hover:border-white/50 hover:bg-white/5 rounded-none uppercase tracking-widest px-8 py-4",
+      "ghost": "text-muted-foreground hover:text-white hover:bg-white/5"
+    },
+    "cards": {
+      "movie_poster": "group relative overflow-hidden rounded-lg aspect-[2/3] border-0 transition-transform hover:scale-105 duration-500",
+      "dashboard_widget": "bg-card border border-border p-6 rounded-xl"
+    },
+    "inputs": {
+      "style": "bg-white/5 border-white/10 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 rounded-md h-12 px-4 text-white placeholder:text-white/30"
+    },
+    "navigation": {
+      "header": "fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/5 h-20 flex items-center justify-between px-8"
+    }
+  },
+  "motion": {
+    "transitions": "transition-all duration-500 cubic-bezier(0.22, 1, 0.36, 1)",
+    "animations": {
+      "fade_in_up": "animate-in fade-in slide-in-from-bottom-8 duration-700",
+      "scale_in": "animate-in zoom-in-95 duration-500",
+      "marquee": "animate-marquee linear infinite"
+    },
+    "micro_interactions": {
+      "hover_lift": "hover:-translate-y-1 hover:shadow-neon",
+      "click_press": "active:scale-95"
+    }
+  },
+  "media": {
+    "image_style": "Cinematic. High contrast. Always add a subtle gradient overlay (bg-gradient-to-t from-black/80 to-transparent) at the bottom of images to ensure text readability.",
+    "aspect_ratios": {
+      "poster": "2/3",
+      "backdrop": "16/9",
+      "avatar": "1/1"
+    }
+  },
+  "image_urls": {
+    "hero_backgrounds": [
+      {
+        "url": "https://images.unsplash.com/photo-1653045474061-075ba29db54f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjBtb3ZpZSUyMHNjZW5lcyUyMGFjdGlvbiUyMHNjaS1maSUyMGRyYW1hfGVufDB8fHx8MTc2NTM2MDg0M3ww&ixlib=rb-4.1.0&q=85",
+        "desc": "Sci-fi group standing, good for hero banner"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1696479670605-aeeb206e1fcb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHw0fHxjaW5lbWF0aWMlMjBtb3ZpZSUyMHNjZW5lcyUyMGFjdGlvbiUyMHNjaS1maSUyMGRyYW1hfGVufDB8fHx8MTc2NTM2MDg0M3ww&ixlib=rb-4.1.0&q=85",
+        "desc": "Red light room, moody, good for thriller section"
+      }
+    ],
+    "movie_posters": [
+      {
+        "url": "https://images.unsplash.com/photo-1551651031-12f1795db9e1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwyfHxjaW5lbWF0aWMlMjBtb3ZpZSUyMHNjZW5lcyUyMGFjdGlvbiUyMHNjaS1maSUyMGRyYW1hfGVufDB8fHx8MTc2NTM2MDg0M3ww&ixlib=rb-4.1.0&q=85",
+        "desc": "Cars/Action poster"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1679573105903-724c7c2f9074?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwzfHxjaW5lbWF0aWMlMjBtb3ZpZSUyMHNjZW5lcyUyMGFjdGlvbiUyMHNjaS1maSUyMGRyYW1hfGVufDB8fHx8MTc2NTM2MDg0M3ww&ixlib=rb-4.1.0&q=85",
+        "desc": "Blue light escalator, sci-fi poster"
+      },
+      {
+        "url": "https://images.pexels.com/photos/8104843/pexels-photo-8104843.jpeg",
+        "desc": "Generic dramatic poster"
+      }
+    ],
+    "theater_interiors": [
+      {
+        "url": "https://images.unsplash.com/photo-1653853301139-f57c5fdc069a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBsdXh1cnklMjBtb3ZpZSUyMHRoZWF0ZXIlMjBpbnRlcmlvciUyMGRhcmslMjBsaWdodGluZ3xlbnwwfHx8fDE3NjUzNjA4NDV8MA&ixlib=rb-4.1.0&q=85",
+        "desc": "Dark theater with red lights"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1676920530245-d13f2ebdebcb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBsdXh1cnklMjBtb3ZpZSUyMHRoZWF0ZXIlMjBpbnRlcmlvciUyMGRhcmslMjBsaWdodGluZ3xlbnwwfHx8fDE3NjUzNjA4NDV8MA&ixlib=rb-4.1.0&q=85",
+        "desc": "Blue chairs, modern cinema hall"
+      }
+    ],
+    "audience": [
+      {
+        "url": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxjaW5lbWElMjBhdWRpZW5jZSUyMGhhcHB5JTIwZGl2ZXJzZSUyMHBlb3BsZSUyMHdhdGNoaW5nJTIwbW92aWV8ZW58MHx8fHwxNzY1MzYwODQ3fDA&ixlib=rb-4.1.0&q=85",
+        "desc": "Happy audience watching movie"
+      }
+    ]
+  },
+  "accessibility": {
+    "contrast": "Ensure all text on dark backgrounds is at least WCAG AA compliant. Use text-gray-300 instead of text-gray-500.",
+    "focus_states": "Visible focus rings are mandatory. Use ring-2 ring-primary ring-offset-2 ring-offset-background.",
+    "reduced_motion": "Respect prefers-reduced-motion media query."
+  },
+  "instructions_to_main_agent": {
+    "general": "You are building a 'Lumière Noir' cinema experience. It must feel expensive, dark, and fluid. Do not build a generic white SaaS app.",
+    "setup": "First, update tailwind.config.js with the colors provided in this JSON. Install 'lucide-react' for icons.",
+    "components": "Use the existing Shadcn components in /components/ui but HEAVILY customize them via className props to match the 'Lumière Noir' aesthetic (remove white backgrounds, add glassmorphism).",
+    "testing": "Add data-testid attributes to ALL interactive elements (buttons, inputs, movie cards). Format: 'movie-card-{id}', 'book-btn', 'login-input'.",
+    "specific_pages": {
+      "landing": "Use a full-screen hero with the 'Sci-fi group' image. Overlay a gradient. Use 'Anton' font for the main title 'EXPERIENCE CINEMA REBORN'.",
+      "booking": "Create a visual seat map. Use SVG circles. Available = border-white/20. Selected = bg-primary shadow-neon. Occupied = bg-red-900/20 text-red-900 cursor-not-allowed.",
+      "admin": "Use a sidebar layout. Dark glass sidebar. Content area with 'Control Room' grid density."
+    }
+  },
+  "universal_guidelines": {
+    "no_gradients_text": "Do not use gradients on small text.",
+    "no_center_align": "Do not center align the entire app.",
+    "micro_animations": "Every button must have a hover state.",
+    "spacing": "Use 2x more padding than you think is necessary."
+  }
+}
